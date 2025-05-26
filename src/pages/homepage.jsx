@@ -150,6 +150,8 @@ import { ReviewCards } from '../components/reviewcards';
 import { GlowingEffectDemo } from '../components/feature';
 import { Spotlight } from '../components/spotlight';
 import { GridBackground } from '../components/gridbackground';
+import Process from '../components/process';
+
 export default function Homepage() {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const [isLoaded, setIsLoaded] = useState(false);
@@ -174,7 +176,7 @@ export default function Homepage() {
       {/* ✨ Background Effects: Grid + Gradient */}
       <div className="absolute inset-0 z-0 pointer-events-none">
         {/* Animated Gradient */}
-        <div className="absolute top-0 left-0 w-full h-[600px] z-0">
+        <div className="absolute top-0 left-0 w-full h-[550px] z-0">
           <GridBackground />
         </div>
 
@@ -265,12 +267,19 @@ export default function Homepage() {
         </div>
 
         {/* 🌟 Features/Effects */}
-        <div className="my-12">
+        <div className="py-12">
+
           <GlowingEffectDemo />
+
+        </div>
+        <div className="py-">
+
+          <Process />
+
         </div>
 
         {/* ⭐ Reviews */}
-        <div className="my-12">
+        <div className="py-12">
           <ReviewCards />
         </div>
 
