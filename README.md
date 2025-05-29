@@ -35,7 +35,6 @@
 - MinIO / IPFS (Decentralized Storage)
 - Redis + PostgreSQL (Database + Cache)
 - CI/CD Pipelines (GitHub Actions)
-- Hybrid Deployment: Cloud + On-Prem
 
 ## 🛠️ Getting Started
 
