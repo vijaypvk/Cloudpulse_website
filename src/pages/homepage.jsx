@@ -143,6 +143,8 @@ import {
   ArrowRight,
   Sparkles,
 } from 'lucide-react';
+import { FaGoogle, FaMicrosoft, FaGithub, FaUber } from 'react-icons/fa';
+import { SiNotion } from 'react-icons/si';
 import { useState, useEffect } from 'react';
 import Footer from '../components/footer';
 import { TypewriterEffect } from '../components/typerwriter';
@@ -180,14 +182,7 @@ export default function Homepage() {
           <GridBackground />
         </div>
 
-        {/* <div
-          className="absolute inset-0 transition-all duration-1000 blur-2xl"
-          style={{
-            background:
-              'radial-gradient(circle at 5% 5%, rgba(168,85,247,0.25), transparent 0%), radial-gradient(circle at 70% 80%, rgba(236,72,153,0.15), transparent 0%)',
-            transform: `translate(${mousePosition.x * 0.3}px, ${mousePosition.y * 0.03}px)`,
-          }}
-        /> */}
+
 
       </div>
 
@@ -268,8 +263,45 @@ export default function Homepage() {
 
         {/* 🌟 Features/Effects */}
         <div className="py-12">
+          <h2 className="text-4xl md:text-5xl font-bold mb-6 leading-tight">
+            Features
+          </h2>
 
           <GlowingEffectDemo />
+
+        </div>
+        <div className="py-12">
+
+          <div className="py-12">
+            <div className="max-w-6xl mx-auto text-center px-6">
+              {/* Header Text */}
+              <h2 className="text-gray-400 text-sm font-semibold tracking-widest uppercase mb-16">
+                Trusted by teams from around the world
+              </h2>
+
+              {/* Company Logos */}
+              <div className="flex flex-wrap justify-center items-center gap-10 md:gap-16 lg:gap-20">
+                {/* Logo item */}
+                {[
+                  { icon: <FaGoogle />, name: 'Google' },
+                  { icon: <FaMicrosoft />, name: 'Microsoft' },
+                  { icon: <FaGithub />, name: 'GitHub' },
+                  { icon: <FaUber />, name: 'Uber' },
+                  { icon: <SiNotion />, name: 'Notion' },
+                ].map(({ icon, name }) => (
+                  <div
+                    key={name}
+                    className="flex items-center gap-4 bg-gray-800 bg-opacity-30 px-6 py-3 rounded-lg cursor-pointer transition transform hover:scale-105 hover:bg-opacity-50 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                    tabIndex={0}
+                    aria-label={`${name} trusted company`}
+                  >
+                    <div className="text-white text-4xl md:text-5xl">{icon}</div>
+                    <span className="text-white text-xl md:text-2xl font-semibold select-none">{name}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
 
         </div>
         <div className="py-">
@@ -279,9 +311,9 @@ export default function Homepage() {
         </div>
 
         {/* ⭐ Reviews */}
-        <div className="py-12">
+        {/* <div className="py-12">
           <ReviewCards />
-        </div>
+        </div> */}
 
         {/* ⌨️ Typewriter CTA */}
         <div className="mt-24 space-y-6">

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Folder, UploadCloud, BarChart4 } from 'lucide-react';
+import { Folder, UploadCloud, BarChart4, Sparkles, ArrowRight } from 'lucide-react';
 
 const Process = () => {
   const [visibleCards, setVisibleCards] = useState([]);
@@ -35,14 +35,20 @@ const Process = () => {
   ];
 
   return (
-    <section className="bg-black text-white min-h-screen flex items-center justify-center py-20 px-6 md:px-12">
+    <section className="bg-black text-white min-h-screen flex items-center justify-center py-10 px-6 md:px-12">
       <div className="max-w-7xl mx-auto text-center">
         {/* Header Section */}
         <div className={`mb-16 transition-all duration-1000 ease-out ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
           <div className="inline-block mb-6">
-            <button className="bg-white text-black px-6 py-2 rounded-full text-sm font-medium border border-white/30 transition-all duration-300 hover:shadow-lg">
-              The Process
-            </button>
+            <div
+              className={`inline-flex items-center space-x-3 bg-white/10 border border-purple-500/30 rounded-full px-6 py-2 mb-10 backdrop-blur-md transition-all duration-500 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}
+            >
+              <Sparkles className="w-5 h-5 text-purple-300 animate-pulse" />
+              <span className="text-sm text-gray-200 font-medium">
+                Process
+              </span>
+              <ArrowRight className="w-5 h-5 text-purple-400" />
+            </div>
           </div>
 
           <h2 className="text-4xl md:text-5xl font-bold mb-6 leading-tight">
@@ -55,7 +61,7 @@ const Process = () => {
         </div>
 
         {/* Steps Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-16">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 ">
           {steps.map((step, index) => (
             <div
               key={index}
@@ -66,7 +72,7 @@ const Process = () => {
               }`}
               style={{ transitionDelay: `${index * 200}ms` }}
             >
-              <div className="bg-zinc-900 p-8 rounded-2xl border border-zinc-700 hover:border-white/20 transition-all duration-500 hover:shadow-lg h-full flex flex-col relative overflow-hidden">
+              <div className="bg-zinc-900 p-8 rounded-2xl border border-zinc-700 hover:border-white/20 transition-all duration-500 hover:shadow-lg h- flex flex-col relative overflow-hidden">
                 {/* Step number */}
                 <div className="absolute top-6 right-6 w-8 h-8 rounded-full border border-gray-600 group-hover:border-white/40 flex items-center justify-center text-sm font-bold transition-all duration-300">
                   {step.number}
