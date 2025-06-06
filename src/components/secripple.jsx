@@ -3,8 +3,8 @@ import { ShieldCheck } from "lucide-react";
 import { cn } from "../lib/utils";
 
 export default function SecurityRipple() {
-  const baseSize = 140;
-  const circles = 5;
+  const baseSize = 150;
+  const circles = 8;
 
   return (
     <div className="relative flex  h-52 w-full items-center justify-center ">
@@ -17,7 +17,7 @@ export default function SecurityRipple() {
       >
         {Array.from({ length: circles }).map((_, i) => {
           const size = baseSize + i * 40;
-          const opacity = 0.25 - i * 0.04;
+          const opacity = 0.30 - i * 0.04;
           const animationDelay = `${i * 0.1}s`;
 
           return (
